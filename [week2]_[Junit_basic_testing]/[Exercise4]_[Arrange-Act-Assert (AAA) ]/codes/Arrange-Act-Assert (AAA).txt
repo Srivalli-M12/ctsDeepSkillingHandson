@@ -1,0 +1,29 @@
+import org.junit.Before;
+import org.junit.After;
+import org.junit.Test;
+import static org.junit.Assert.*;
+public class FixtureTest {
+    private Calculator calc;
+    @Before
+    public void setUp() {
+        // Arrange
+        calc = new Calculator();
+        System.out.println("Setting up before test...");
+    }
+    @After
+    public void tearDown() {
+        System.out.println("Cleaning up after test...");
+    }
+    @Test
+    public void testAddition() {
+        // Act
+        int result = calc.add(2, 3);
+        // Assert
+        assertEquals(5, result);
+    }
+@Test
+    public void testSubtraction() {
+        int result = calc.subtract(5, 2);
+        assertEquals(3, result);
+    }
+}
